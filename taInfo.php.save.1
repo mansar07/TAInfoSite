@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>TA Information | Info</title>
+      <link rel="stylesheet" type="text/css" href="layout1.css">
+      <style type="text/css">
+         body {
+            background-color: #F2F2F2;
+            color: #666666;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+         }
+
+         p {
+            font-size: 18px;
+         }
+      </style>
+   </head>
+
+   <body>
+<?php
+include 'connectdb.php';
+?>
+
+       <h1>Teaching Assistant Information Site</h1>
+       <nav>
+          <a href = "mainmenu.php" class = "nav-button">Main</a>
+          <a href = "taInfo.php" class = "nav-button">Info</a>
+          <a href = "modifyTa.php" class = "nav-button">Modify</a>
+          <a href = "course.php" class = "nav-button">Course</a>
+       </nav>
+
+    <h2>Teaching Assistant Information</h2>
+    <h3>All Information About TA's</h3>
+
+
+    
+
+<?php
+include 'getallinfo.php';
+?>
+
+  </body>
+</html>
+

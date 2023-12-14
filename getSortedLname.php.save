@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>TA Information | Info</title>
+      <link rel="stylesheet" type="text/css" href="layout1.css">
+      <style type="text/css">
+         body {
+            background-color: #F2F2F2;
+            color: #666666;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+         }
+
+         p {
+            font-size: 18px;
+         }
+      </style>
+   </head>
+
+   <body>
+      <h1>Teaching Assistant Information Site</h1>
+<?php
+include 'connectdb.php';
+?>
+      <h3>Here Is the Sorted Data By Last Name</h3>
+
+<?php
+
+$
+
+
+
+
+
+?>
+
+   </body>
+</html>
+

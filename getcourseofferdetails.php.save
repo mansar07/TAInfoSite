@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>TA Information | Info</title>
+      <link rel="stylesheet" type="text/css" href="layout1.css">
+      <style type="text/css">
+         body {
+            background-color: #F2F2F2;
+            color: #666666;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+         }
+
+         p {
+            font-size: 18px;
+         }
+      </style>
+   </head>
+
+   <body>
+
+<?php
+include 'connectdb.php';
+?>
+       <h1>Teaching Assistant Information Site</h1>
+
+<h2>Course Offering Details Of The Selected Course Offering</h2>
+<hr>
+
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   $selectedcourseoffer = $_POST['courseoffering'];
+   $query = "SELECT co.coid, c.coursenum, c.coursename, ta.tauserid, ta.firstname, ta.lastname FROM courseoffer co JOIN course c ON co.whichcourse = c.coursenum JOIN hasworkedon hw ON co.coid = hw.coid JOIN ta ON hw.tauserid = ta.tauserid WHERE co.coid = '$selectedcourseoffer'";
+   $result = mysqli_query($connection, $query);
+
+   if (!$result) {
+      die("Database Query Failed");
+   }
+
+   while ($row = mysqli_fetch_assoc($result)) {
+      echo "Course Code: " . $row['coursenum'] . "<br>";
+      echo "Course Name: " . $row['coursename'] . "<br>";
+      echo "User ID: " . $row['tauserid'] . "<br>";
+      echo "Name: " . $row['firstname'] . " " . $row['lastname'] . "<br><br>";
+   }
+   mysqli_free_result($result);
+}
+
+?>
+
+ </body>
+</html>
+

@@ -1,0 +1,94 @@
+body {
+    margin-top:20px;
+    text-align: center;
+}
+
+h1 {
+   color: #003366;
+   text-align: center;
+}
+
+h2, h3 {
+   color: #003366;
+   margin: 1px;
+   padding: 0;
+   vertical-align: top;
+}
+
+h4, h5, h6 {
+   color: #003366;
+}
+
+nav {
+   display: flex;
+   justify-content: center;
+   padding: 10px 0;
+}
+
+.nav-button {
+   display: inline-block;
+   padding: 30px 60px;
+   margin: 20px;
+   background-color: #003366; /* Deep Blue */
+   color: white;
+   text-align: center;
+   text-decoration: none;
+   font-weight: bold;
+   border-radius: 10px;
+   transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+   background-color: #ff9933; /* Warm Orange */
+}
+
+.wrapper {
+    width:1200px;
+    margin:auto;
+}
+section {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+
+.ib {
+    display:inline-block;
+    min-height: 50px;
+    overflow:hidden;
+    margin: 1px;
+    padding:0;
+    vertical-align: top;
+}
+
+.i2 {
+    width:598px;
+}
+.i3 {
+    width:398px
+}
+
+input[type = 'text'], input[type = 'number'] {
+    background-color: #f0f0f0; /* Light Gray Background */
+    color: #003366; /* Text Color */
+    font-family: Arial, sans-serif;
+    border: 1px solid #003366; /* Border Color */
+    padding: 5px;
+    border-radius: 4px;
+    margin: 5px 0; /* Spacing for visual appeal */
+}
+
+input[type='submit'] {
+    background-color: #ff9933; /* Deep Blue */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type='submit']:hover {
+    background-color: #ff9933; /* Warm Orange */
+}
+

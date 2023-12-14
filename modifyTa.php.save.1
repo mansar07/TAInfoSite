@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>TA Information | Modify</title>
+      <link rel="stylesheet" type="text/css" href="layout1.css">
+      <style type="text/css">
+         body {
+            background-color: #F2F2F2;
+            color: #666666;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+         }
+
+         p {
+            font-size: 18px;
+         }
+
+       </style>
+   </head>
+
+   <body>
+
+<?php
+include 'connectdb.php';
+?>
+
+      <h1>Teaching Assistant Information Site</h1>
+      <nav>
+         <a href = "mainmenu.php" class = "nav-button">Main</a>
+         <a href = "taInfo.php" class = "nav-button">Info</a>
+         <a href = "modifyTa.php" class = "nav-button">Modify</a>
+         <a href = "course.php" class = "nav-button">Course</a>
+      </nav>
+
+      <h2>Modify Teaching Assistant Information</h2>
+      <hr>
+
+<form action = "addnewta.php" method = "post">
+   <h3>Add A New Teaching Assistant</h3>
+   First Name: <input type = "text" name = "firstname"><br>
+   Last Name: <input type = "text" name = "lastname"><br>
+   User ID: <input type = "text" name = "tauserid"><br>
+   Student Num: <input type = "number" name = "studentnum"><br>
+   <input type = "radio" name = "degreetype" value = "Masters">Masters
+   <input type = "radio" name = "degreetype" value = "PhD">PhD
+   <br>
+
+<?php
+   $query = "SELECT coursenum, coursename FROM course";
+   $result = mysqli_query($connection, $query);
+
+   if (!$result) {
+      die("Database Query Failed");
+   }
+
+   echo "<h4>Pick A Course TA Loves</h4>";
+   while ($row = mysqli_fetch_assoc($result)) {
+      echo "<option value = '" . $row['coursenum'] . "'>" . $row['coursenum'] . ", " . $row['coursename'] . "</option>";
+   }
+
+?>
+<input type = "submit" value = "Add TA"
+
+</form>
+
+   </body>
+</html>
